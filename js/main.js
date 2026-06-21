@@ -224,7 +224,7 @@
         if (r.ok) { apply(await r.json()); armCountUp(); watchBand(); return; }
       } catch { /* fall through */ }
       try {
-        const r = await fetch('/assets/data/metrics.json', { cache: 'no-store' });
+        const r = await fetch('assets/data/metrics.json', { cache: 'no-store' });
         if (r.ok) { apply(await r.json()); }
       } catch { /* keep markup defaults */ }
       armCountUp();

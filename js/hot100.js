@@ -6,8 +6,8 @@
   'use strict';
 
   const LIVE_BASE = 'https://pulsedj.com/api/v1/song/hot100-web?countryCode=';
-  const SNAPSHOT_BASE = '/assets/data/hot100-';   // -il.json, -us.json, …
-  const SNAPSHOT_FALLBACK = '/assets/data/hot100-il.json';
+  const SNAPSHOT_BASE = 'assets/data/hot100-';   // -il.json, -us.json, …
+  const SNAPSHOT_FALLBACK = 'assets/data/hot100-il.json';
 
   const escapeHtml = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => (
     { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]
