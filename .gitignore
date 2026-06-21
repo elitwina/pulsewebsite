@@ -1,0 +1,15 @@
+# Mac noise
+.DS_Store
+
+# Local-only backups (kept on disk before re-encoding, not part of the deploy)
+*.original.mp4
+*.original.png
+
+# Playwright debug output
+.playwright-mcp/
+
+# Screenshots taken while iterating
+/mob-*.jpeg
+/pulsedj-*.jpeg
+/offlinedj-*.jpeg
+/shazam-*.jpeg

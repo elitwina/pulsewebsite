@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>PulseDJ - your DJ copilot. Knows what plays next.</title>
+<meta name="description" content="PulseDJ is a copilot for working DJs. Drop a track in Serato, Rekordbox, Traktor, VirtualDJ or djay Pro - Pulse hands you the next three that work. Free to start, no card needed." />
+<meta name="theme-color" content="#0b0a0c" />
+
+<meta property="og:title" content="PulseDJ - your DJ copilot. Knows what plays next." />
+<meta property="og:description" content="Drop a track. Pulse hands you the next three that work. Built for working DJs. Free to start, no card needed." />
+<meta property="og:image" content="/assets/img/og.jpg" />
+<meta property="og:type" content="website" />
+
+<link rel="icon" href="/assets/img/logo-icon-green.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/styles.css" />
+
+<!-- Google Analytics (gtag) - matches the live pulsedj.com tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QGX764XNQN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-QGX764XNQN');
+</script>
+
+<!-- Meta Pixel - matches the live pulsedj.com pixel -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '594220423750495');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=594220423750495&ev=PageView&noscript=1" alt="" /></noscript>
+</head>
+<body class="theme-cinematic">
+
+<!-- ============== SPLASH ============== -->
+<div id="splash" class="splash" aria-hidden="true">
+  <div class="splash-stage">
+    <img src="/assets/img/logo-icon-green.svg" alt="" class="splash-logo" />
+    <div class="splash-wordmark">PulseDJ</div>
+    <div class="splash-rule" aria-hidden="true"></div>
+  </div>
+</div>
+
+<!-- ============== NAVBAR ============== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <img src="/assets/img/logo-icon-green.svg" alt="PulseDJ" class="brand-logo" />
+      <span class="brand-name">PulseDJ</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#supported">Supported software</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#features">What Pulse does</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="/hot100.html">Hot 100</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li class="nav-menu-cta"><a href="#top" class="cta-pill">Get Pulse - Free</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="#top" class="cta-pill">Get Pulse - Free</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<header class="hero" id="top">
+  <video class="hero-bg-video" aria-hidden="true"
+         src="/assets/video/hero-bg.mp4"
+         poster="/assets/video/hero-bg-poster.jpg"
+         autoplay muted loop playsinline preload="metadata"></video>
+  <span class="hero-bg-overlay" aria-hidden="true"></span>
+  <span class="hero-mesh" aria-hidden="true"></span>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <h1 class="hero-title">
+        Pulse tells you<br />
+        what plays next<br />
+        on
+        <span class="rotator" aria-hidden="true">
+          <span class="rotator-track" id="rotatorTrack">
+            <span class="rotator-item">Serato</span>
+            <span class="rotator-item">Rekordbox</span>
+            <span class="rotator-item">Traktor</span>
+            <span class="rotator-item">VirtualDJ</span>
+            <span class="rotator-item">djay Pro</span>
+            <span class="rotator-item">Serato</span>
+          </span>
+        </span>
+        <span class="sr-only">Serato, Rekordbox, Traktor, VirtualDJ and djay Pro.</span>
+      </h1>
+
+      <p class="hero-tag">Stay fresh. Never black out.</p>
+
+      <div id="download" class="hero-cta">
+        <a href="https://pulse-public-resources.s3.eu-west-1.amazonaws.com/builds/versions/3.3.5/pulse-dj_3.3.5.dmg" class="dl" data-os="mac">
+          <i class="fab fa-apple"></i>
+          <span><small>Download for</small><b>macOS</b></span>
+        </a>
+        <a href="https://apps.microsoft.com/detail/9nl7s594lnnc" class="dl" data-os="windows" target="_blank" rel="noopener">
+          <i class="fab fa-windows"></i>
+          <span><small>Download for</small><b>Windows</b></span>
+        </a>
+      </div>
+
+      <p class="hero-fine">Free to start. No credit card. Works alongside the software you already use.</p>
+    </div>
+
+  </div>
+</header>
+
+<!-- ============== SUPPORTED SOFTWARE ============== -->
+<section class="section supported" id="supported">
+  <h2 class="line-title">Supported DJ software</h2>
+
+  <div class="supported-grid">
+    <div class="supported-item">
+      <img src="/assets/img/brands/serato.svg" alt="Serato DJ Pro" class="supported-logo" />
+    </div>
+    <div class="supported-item">
+      <img src="/assets/img/brands/rekordbox.svg" alt="rekordbox" class="supported-logo" />
+    </div>
+    <div class="supported-item">
+      <div class="supported-mark supported-mark--traktor" aria-label="Traktor Pro">TRAKTOR</div>
+    </div>
+    <div class="supported-item">
+      <img src="/assets/img/brands/virtualdj.png" alt="VirtualDJ" class="supported-logo supported-logo--bitmap" />
+    </div>
+    <div class="supported-item">
+      <div class="supported-mark supported-mark--djay" aria-label="djay Pro">djay Pro</div>
+    </div>
+  </div>
+
+  <p class="supported-foot">
+    Pulse runs <em>alongside</em> the app you already DJ in. It never touches your library, your crates, or your files.
+  </p>
+</section>
+
+<!-- ============== HOW IT WORKS / VIDEOS ============== -->
+<section class="section videos" id="how">
+  <h2 class="line-title">How it works</h2>
+
+  <div class="video-grid">
+    <figure class="video-card video-card--landscape">
+      <div class="video-thumb video-thumb--youtube">
+        <iframe
+          class="video-yt"
+          src="https://www.youtube-nocookie.com/embed/Oa7ZRw8DS-c?rel=0"
+          title="Pulse tour"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============== FEATURES SHOWCASE ============== -->
+<section class="section features" id="features">
+  <h2 class="line-title">What Pulse does</h2>
+
+  <div class="showcase">
+
+    <!-- ROW 01 - Pulse Window -->
+    <article class="row" data-num="01">
+      <div class="row-copy">
+        <h3 class="row-title">A second screen that stays on top.</h3>
+        <p class="row-lede">
+          The Pulse Window floats over Serato, Rekordbox, Traktor, VirtualDJ or djay Pro.
+          You glance, you grab, you mix on. No alt-tabbing mid-set.
+        </p>
+        <ul class="row-list">
+          <li>Always-on-top floating panel</li>
+          <li>Resizable font and row spacing</li>
+          <li>One-click pin to lock a track at the top</li>
+        </ul>
+      </div>
+      <div class="row-visual">
+        <figure class="row-video" data-autoloop>
+          <video
+            class="video-el"
+            src="/assets/video/feature-window.mp4"
+            poster="/assets/video/feature-window-poster.jpg"
+            muted loop playsinline preload="metadata"
+            aria-label="Pulse Window floating over Serato"></video>
+          <button type="button" class="video-sound" aria-label="Toggle sound" data-sound disabled hidden></button>
+          <figcaption class="row-video-cap">Live in Serato</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- ROW 02 - MyStyle -->
+    <article class="row row--reverse" data-num="02">
+      <div class="row-copy">
+        <h3 class="row-title">Suggestions in <em>your</em> style.</h3>
+        <p class="row-lede">
+          MyStyle watches the sets you actually play and starts handing back tracks <em>you</em>
+          play after a given record. Sign in on a second laptop - your taste comes with you.
+        </p>
+        <ul class="row-list">
+          <li>Learns from your real history, not a generic chart</li>
+          <li>Syncs across every laptop you sign into</li>
+          <li>“Auto stay in genre” for tight, focused rooms</li>
+        </ul>
+      </div>
+      <div class="row-visual">
+        <figure class="row-image">
+          <img src="/assets/img/screenshots/mystyle.webp" alt="Serato DJ Pro with the Pulse panel on the right - MyStyle mode active, suggesting tracks that match what's playing" />
+        </figure>
+      </div>
+    </article>
+
+    <!-- ROW 03 - Hot 100 (live + preview screenshot) -->
+    <article class="row" data-num="03">
+      <div class="row-copy">
+        <h3 class="row-title">Hot 100 - what's hitting tonight.</h3>
+        <p class="row-lede">
+          A live chart of the 100 most-played tracks across every Pulse DJ -
+          updated continuously from real sets in progress. The list below is
+          pulled live from your country's chart.
+        </p>
+        <ul class="row-list">
+          <li>Country filter - global, or your country</li>
+          <li>Genre filter - Afro-House, Tech, Hip-Hop, Latin, Pop…</li>
+          <li>Continuously updated from real sets in progress</li>
+        </ul>
+      </div>
+      <div class="row-visual hot100-visual">
+        <!-- Inline preview framed as a Chrome browser window -->
+        <div class="chrome-window" aria-hidden="true">
+          <div class="chrome-titlebar">
+            <div class="chrome-traffic">
+              <span class="chrome-dot chrome-dot--red"></span>
+              <span class="chrome-dot chrome-dot--yellow"></span>
+              <span class="chrome-dot chrome-dot--green"></span>
+            </div>
+            <div class="chrome-tabs">
+              <div class="chrome-tab chrome-tab--active">
+                <span class="chrome-tab-fav"></span>
+                <span class="chrome-tab-title">Hot 100 - PulseDJ</span>
+                <span class="chrome-tab-close">×</span>
+              </div>
+              <span class="chrome-tab-plus">+</span>
+            </div>
+          </div>
+          <div class="chrome-toolbar">
+            <span class="chrome-nav chrome-nav--back" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M10 3 L5 8 L10 13" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="chrome-nav chrome-nav--fwd" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M6 3 L11 8 L6 13" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="chrome-nav" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M12.5 4.5a5 5 0 1 0 1.5 5.5 M12.5 4.5 V2 M12.5 4.5 H10" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="chrome-url">
+              <span class="chrome-lock" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><rect x="4" y="7" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M5.5 7 V5 a2.5 2.5 0 0 1 5 0 V7" stroke="currentColor" stroke-width="1.3" fill="none"/></svg>
+              </span>
+              <span class="chrome-url-text">pulsedj.com<span class="chrome-url-path">/hot100</span></span>
+            </div>
+            <span class="chrome-nav chrome-nav--more" aria-hidden="true">⋮</span>
+          </div>
+          <div class="chrome-body">
+            <div class="h100-head" role="row">
+              <span>#</span>
+              <span class="h100-head-track">Track</span>
+              <span class="h100-head-plays">Plays</span>
+            </div>
+            <ol class="h100-list" id="hot100-preview-list">
+              <li class="h100-row h100-row--empty">
+                <div class="h100-loader"><span class="h100-spinner" aria-hidden="true"></span><span>Loading…</span></div>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <a class="hot100-cta" href="/hot100.html">
+          See the full Hot 100
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Smaller capability strip -->
+  <div class="cap-strip">
+    <div class="cap">
+      <div class="cap-title">Drag &amp; drop to deck</div>
+      <p>Green drag handle → straight into your Serato / Rekordbox deck.</p>
+    </div>
+    <div class="cap">
+      <div class="cap-title">Works offline at gigs</div>
+      <p>First hour caches a local DB. After that, no venue Wi-Fi needed.</p>
+    </div>
+    <div class="cap">
+      <div class="cap-title">Mac &amp; Windows</div>
+      <p>Native on Apple Silicon and Intel. Windows via the Microsoft Store.</p>
+    </div>
+    <div class="cap">
+      <div class="cap-title">8 languages</div>
+      <p>English, ES, FR, DE, IT, PT, NL, HE - switch any time.</p>
+    </div>
+    <div class="cap">
+      <div class="cap-title">Multi-laptop sync</div>
+      <p>One account, every machine - history follows you.</p>
+    </div>
+    <div class="cap">
+      <div class="cap-title">Anonymous by design</div>
+      <p>Your data feeds the model anonymously. No other DJ ever sees it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== STATS ============== -->
+<section class="stats-band">
+  <div class="stats-inner">
+    <p class="stats-eyebrow">Pulse has analyzed</p>
+    <div class="stats-row">
+      <div><span class="stat-n" id="stat-events">4,586,706</span><span class="stat-l">parties</span></div>
+      <div><span class="stat-n" id="stat-pairings">412,881,913</span><span class="stat-l">song pairings</span></div>
+      <div><span class="stat-n" id="stat-unique">377,983</span><span class="stat-l">unique tracks</span></div>
+    </div>
+    <p class="stats-foot">- and every set you play with Pulse open makes that number bigger, and the suggestions sharper.</p>
+  </div>
+</section>
+
+<!-- ============== TESTIMONIALS ============== -->
+<section class="section testimonials">
+  <h2 class="line-title">What DJs say about Pulse</h2>
+
+  <div class="t-grid">
+    <a class="t-card" href="https://www.instagram.com/dj_asi_c/" target="_blank" rel="noopener" aria-label="DJ Asi-C on Instagram">
+      <div class="t-card-media" style="background-image: url('/assets/img/testimonial-asic.jpg');" aria-hidden="true"></div>
+      <div class="t-card-body">
+        <p class="t-quote">“So Simple, So Creative! With Pulse the ideas for Songs that fit perfectly to the track that played is Unlimited!! I love both the AI that I can learn from &amp; my side that reminds me great songs that I forgot!”</p>
+        <div class="t-by">
+          <div>
+            <div class="t-name">DJ Asi-C</div>
+            <span class="t-handle"><i class="fab fa-instagram" aria-hidden="true"></i> @dj_asi_c</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <a class="t-card" href="https://www.instagram.com/djkobimanor/" target="_blank" rel="noopener" aria-label="DJ Kobi Manor on Instagram">
+      <div class="t-card-media" style="background-image: url('/assets/img/testimonial-kobimanor.png'); background-position: center 20%;" aria-hidden="true"></div>
+      <div class="t-card-body">
+        <p class="t-quote">“Pulse brings something new to every gig I do. The suggestions it gives keep my sets fresh and different. It's like, I can always throw in something unexpected at each party now.”</p>
+        <div class="t-by">
+          <div>
+            <div class="t-name">DJ Kobi Manor</div>
+            <span class="t-handle"><i class="fab fa-instagram" aria-hidden="true"></i> @djkobimanor</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============== PRICING ============== -->
+<section class="section pricing" id="pricing">
+  <div class="pricing-hero">
+    <h2 class="pricing-title">Pick your plan<br /><em>built for working DJs.</em></h2>
+    <p class="pricing-lede">Every feature is in Free. Pro adds speed, removes limits, and helps fund development.</p>
+  </div>
+
+  <div class="price-cards">
+    <div class="price-card">
+      <div class="price-card-head">
+        <span class="price-card-icon" aria-hidden="true"></span>
+      </div>
+      <div class="price-name">Free</div>
+      <div class="price-meta">Best for getting started.</div>
+      <div class="price-num price-num--free"><b>Free</b></div>
+      <a href="#download" class="price-cta">Get Started</a>
+      <hr class="price-divider" />
+      <div class="price-list-head">What you will get</div>
+      <ul class="price-list">
+        <li>Suggests next track from history and thousands of DJs</li>
+        <li>Drag &amp; Drop to deck - up to 10 drags per party</li>
+        <li>Unlimited parties</li>
+        <li>Works offline</li>
+      </ul>
+    </div>
+
+    <div class="price-card price-card--featured">
+      <div class="price-card-head">
+        <span class="price-card-icon" aria-hidden="true"></span>
+      </div>
+      <div class="price-name">Pro</div>
+      <div class="price-meta">For DJs gigging regularly.</div>
+      <div class="price-num"><b>$10</b><small>/ per month</small></div>
+      <a href="#download" class="price-cta price-cta--filled">Get Started</a>
+      <hr class="price-divider" />
+      <div class="price-list-head">What you will get</div>
+      <ul class="price-list">
+        <li>Everything in Free</li>
+        <li>Faster suggestions - priority servers, no waiting mid set</li>
+        <li>Unlimited drags - no 10-a-set limit</li>
+        <li>Priority support - answers in hours, not days</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <div class="price-card-head">
+        <span class="price-card-icon" aria-hidden="true"></span>
+      </div>
+      <div class="price-name">Pro Yearly</div>
+      <div class="price-meta">Best for residencies &amp; touring.</div>
+      <div class="price-num"><b>$7.50</b><small>/ per month</small></div>
+      <a href="#download" class="price-cta">Get Started</a>
+      <hr class="price-divider" />
+      <div class="price-list-head">What you will get</div>
+      <ul class="price-list">
+        <li>Everything in Pro</li>
+        <li>Save 25% vs monthly - $90 charged yearly</li>
+        <li>Price locked for a full year</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ (top 7 - full set at /faq.html) ============== -->
+<section class="section faq" id="faq">
+  <h2 class="line-title">Frequently asked</h2>
+
+  <div class="faq-list">
+
+    <details class="faq-item">
+      <summary>What is PulseDJ?</summary>
+      <div class="faq-a">
+        <p>Pulse is a DJ copilot for macOS and Windows. It watches what you are playing in your DJ software and suggests what to play next, based on what thousands of DJs have played in similar situations. A second brain that knows what works on the dancefloor.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is Pulse free? How does Pulse make money?</summary>
+      <div class="faq-a">
+        <p>Every feature is available in the Free plan. Pro plans add speed, remove limits, and help fund ongoing development. Pulse is funded by Zeev Ventures from California, which gives us the privilege of operating for a few years as we build value for you.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Which DJ software is supported by Pulse?</summary>
+      <div class="faq-a">
+        <p>Serato, Rekordbox, Traktor, Virtual DJ, and djay Pro. Pulse runs alongside the platform you already use - no migration, no library changes.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Which operating systems does Pulse support?</summary>
+      <div class="faq-a">
+        <ul>
+          <li><strong>Mac:</strong> macOS 11 or later (Big Sur, Monterey, Ventura, Sonoma, Sequoia). Native on Apple Silicon and Intel.</li>
+          <li><strong>Windows:</strong> Windows 10 or later, installed via the <a href="https://apps.microsoft.com/detail/9nl7s594lnnc" target="_blank" rel="noopener">Microsoft Store</a>.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need internet at the gig?</summary>
+      <div class="faq-a">
+        <p>You can use Pulse at parties without an internet connection. You only need a network connection during the first hour or so - Pulse analyzes your history and loads a local database so you can use it offline later. When you <em>do</em> have an internet connection during a party, it can improve the suggestions you get.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Will Pulse change any of my crates, playlists, or track files?</summary>
+      <div class="faq-a">
+        <p>No. Pulse only <em>reads</em> your library and history data - it never modifies your audio files, crates, or playlists.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I run Pulse on multiple computers?</summary>
+      <div class="faq-a">
+        <p>Yes. Install Pulse on as many machines as you like and sign in with the same account on each. Your full playing history syncs across devices so your personalized MyStyle suggestions follow you everywhere.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <div class="faq-more">
+    <a href="/faq.html" class="link-out">See all questions in the full FAQ &rarr;</a>
+  </div>
+</section>
+
+<!-- ============== CONTACT TILES ============== -->
+<section class="section contact">
+  <h2 class="line-title">Talk to us</h2>
+  <p class="contact-lede">For support, suggestions or collaborations, reach us at</p>
+  <a class="contact-mail" href="mailto:product@pulsedj.com">product@pulsedj.com</a>
+</section>
+
+<!-- ============== END CTA ============== -->
+<section class="endcta">
+  <div class="endcta-inner">
+    <div class="endcta-text">
+      <h2>Start free.</h2>
+      <p>Free to start. No credit card.</p>
+    </div>
+    <div class="hero-cta endcta-cta">
+      <a href="https://pulse-public-resources.s3.eu-west-1.amazonaws.com/builds/versions/3.3.5/pulse-dj_3.3.5.dmg" class="dl" data-os="mac">
+        <i class="fab fa-apple"></i>
+        <span><small>Download for</small><b>macOS</b></span>
+      </a>
+      <a href="https://apps.microsoft.com/detail/9nl7s594lnnc" class="dl" data-os="windows" target="_blank" rel="noopener">
+        <i class="fab fa-windows"></i>
+        <span><small>Download for</small><b>Windows</b></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#top" class="brand">
+        <img src="/assets/img/logo-icon-green.svg" alt="" class="brand-logo" />
+        <span class="brand-name">PulseDJ</span>
+      </a>
+      <p class="footer-tag">The DJ copilot.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/quick-guide.html">Quick guide</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="mailto:support@pulsedj.com">support@pulsedj.com</a></li>
+        <li><a href="https://facebook.com/groups/2051844701930444" target="_blank" rel="noopener">Facebook group</a></li>
+        <li><a href="/terms.html">Terms</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> PulseDJ</span>
+    <div class="footer-social">
+      <a href="https://facebook.com/groups/2051844701930444" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="/blog.html" aria-label="Blog"><i class="fas fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/hot100.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
