@@ -7,6 +7,51 @@
     return s ? new URL('../assets/data/', s).href : 'assets/data/';
   })();
 
+  // ── NAVBAR INJECTION ────────────────────────────────────────────────────────
+  // Single source of truth for the top bar. All pages carry an empty
+  // <nav class="navbar" id="navbar"></nav> shell; this fills it in.
+  (function buildNavbar() {
+    const nav = document.getElementById('navbar');
+    if (!nav || nav.querySelector('.nav-inner')) return; // already built
+
+    const inBlog = /\/blog\/[^/]+$/.test(window.location.pathname);
+    const b = inBlog ? '../' : './';
+    const isHome = !inBlog && (
+      window.location.pathname.endsWith('/') ||
+      window.location.pathname.endsWith('/index.html')
+    );
+
+    const a = (path, text, cls) => {
+      const href = isHome && path.startsWith('index.html#')
+        ? '#' + path.split('#')[1]
+        : b + path;
+      return `<li${cls ? ' class="' + cls + '"' : ''}><a href="${href}">${text}</a></li>`;
+    };
+
+    nav.innerHTML = `
+  <div class="nav-inner">
+    <a href="${isHome ? '#top' : b}" class="brand">
+      <img src="${b}assets/img/logo-icon-red.svg" alt="PulseDJ" class="brand-logo" />
+      <span class="brand-name">PulseDJ</span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      ${a('index.html#how-it-works', 'How it works')}
+      ${a('index.html#pricing', 'Pricing')}
+      ${a('faq.html', 'FAQ')}
+      ${a('hot100.html', 'Hot 100')}
+      ${a('blog.html', 'Blog')}
+      <li class="nav-menu-cta"><a href="${b}index.html" class="cta-pill">Get Pulse - Free</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="${b}index.html" class="cta-pill">Get Pulse - Free</a>
+    </div>
+  </div>`;
+  })();
+  // ────────────────────────────────────────────────────────────────────────────
+
   // Year
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -28,9 +73,9 @@
     const LOGOS = { green: 'assets/img/logo-icon-green.svg', red: 'assets/img/logo-icon-red.svg' };
 
     const applyTheme = (theme) => {
-      document.documentElement.classList.remove('theme-red-early');
-      document.body.classList.toggle('theme-red', theme === 'red');
-      const logoFile = LOGOS[theme] || LOGOS.green;
+      document.documentElement.classList.remove('theme-green-early');
+      document.body.classList.toggle('theme-green', theme === 'green');
+      const logoFile = LOGOS[theme] || LOGOS.red;
       // Swap all brand logo images
       document.querySelectorAll('.brand-logo, .splash-logo').forEach(img => {
         const base = img.getAttribute('src').replace(/logo-icon-(green|red)\.svg(\?.*)?$/, '');
@@ -65,7 +110,7 @@
       });
     }
 
-    // Restore saved theme (or default green)
+    // Restore saved theme (default: red)
     let saved = 'red';
     try { saved = localStorage.getItem(STORAGE_KEY) || 'red'; } catch(e) {}
     applyTheme(saved);

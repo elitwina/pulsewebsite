@@ -14,12 +14,12 @@
      Change --brand-rgb to swap the entire site identity color.
      All brand tokens below derive from it.
      ────────────────────────────────────────────────────────────── */
-  --brand-rgb:    38, 246, 111;                  /* current: PulseDJ green */
-  --brand:        rgb(var(--brand-rgb));         /* #26f66f */
-  --brand-hover:  #1ddb63;
-  --brand-light:  #5eff95;                       /* cta-pill top-of-gradient */
-  --brand-deep:   #15a648;                       /* cta-pill bottom-of-gradient */
-  --brand-text:   #06190f;                       /* text ON brand-colored buttons - change per theme */
+  --brand-rgb:    232, 35, 42;                   /* default: PulseDJ red */
+  --brand:        rgb(var(--brand-rgb));
+  --brand-hover:  #c01a20;
+  --brand-light:  #ff5f65;                       /* cta-pill top-of-gradient */
+  --brand-deep:   #a81519;                       /* cta-pill bottom-of-gradient */
+  --brand-text:   #fff;                          /* text ON brand-colored buttons */
   --brand-soft:   rgba(var(--brand-rgb), 0.12);
   --brand-line:   rgba(var(--brand-rgb), 0.32);
   --brand-glow:   rgba(var(--brand-rgb), 0.40);
@@ -320,19 +320,19 @@ body:has(.splash:not(.is-gone)) { overflow: hidden; }
   transform: translateY(0);
 }
 
-/* ── RED THEME ──────────────────────────────────────────────────────────────
+/* ── GREEN THEME ─────────────────────────────────────────────────────────────
    To add a new color theme, copy this block and override only these tokens.
    Everything else on the site inherits from --brand-rgb automatically.
    ─────────────────────────────────────────────────────────────────────────── */
-body.theme-red,
-html.theme-red-early body,
-html.theme-red-early {
-  --brand-rgb:   232, 35, 42;
+body.theme-green,
+html.theme-green-early body,
+html.theme-green-early {
+  --brand-rgb:   38, 246, 111;
   --brand:       rgb(var(--brand-rgb));
-  --brand-hover: #c01a20;
-  --brand-light: #ff5f65;
-  --brand-deep:  #a81519;
-  --brand-text:  #fff;
+  --brand-hover: #1ddb63;
+  --brand-light: #5eff95;
+  --brand-deep:  #15a648;
+  --brand-text:  #06190f;
 }
 
 /* ── COLOR SWITCHER (navbar) ──────────────────────────────────────────────── */
@@ -783,8 +783,8 @@ html.theme-red-early {
   border-radius: 4px;
   letter-spacing: 0.05em;
 }
-.pw-badge--new { background: var(--green); color: var(--brand-text); }
-.pw-badge--up { color: var(--green); }
+.pw-badge--new { background: var(--brand); color: var(--brand-text); }
+.pw-badge--up { color: var(--brand); }
 .pw-badge--down { color: #ff6b6b; }
 .pw-badge--flat { color: var(--paper-mute); }
 
@@ -1185,13 +1185,13 @@ html.theme-red-early {
   line-height: 1;
 }
 .h100-country-name {
-  color: var(--green);
+  color: var(--brand);
   font-weight: 600;
 }
 .h100-country-chev {
   width: 10px;
   height: 7px;
-  color: var(--green);
+  color: var(--brand);
   transition: transform 0.18s;
 }
 .h100-country[data-open="true"] .h100-country-chev { transform: rotate(180deg); }
@@ -1244,7 +1244,7 @@ html.theme-red-early {
   background: rgba(var(--brand-rgb), 0.16);
 }
 .h100-country-menu li[aria-selected="true"] .h100-country-opt-name {
-  color: var(--green);
+  color: var(--brand);
   font-weight: 600;
 }
 .h100-country-opt-flag {
@@ -1323,7 +1323,7 @@ html.theme-red-early {
 }
 /* Subtle highlight for top 10 */
 .h100-row:nth-child(-n+10) .h100-rank { color: var(--paper-dim); }
-.h100-row:first-child .h100-rank { color: var(--green); font-weight: 600; }
+.h100-row:first-child .h100-rank { color: var(--brand); font-weight: 600; }
 
 .h100-meta {
   display: flex;
@@ -1422,7 +1422,7 @@ html.theme-red-early {
   height: 22px;
   border-radius: 50%;
   border: 2px solid rgba(var(--brand-rgb), 0.18);
-  border-top-color: var(--green);
+  border-top-color: var(--brand);
   animation: h100-spin 0.85s linear infinite;
 }
 @keyframes h100-spin {
@@ -1443,7 +1443,7 @@ html.theme-red-early {
   position: absolute;
   inset: 0;
   width: 40%;
-  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  background: linear-gradient(90deg, transparent, var(--brand), transparent);
   animation: h100-progress-slide 1.2s ease-in-out infinite;
 }
 @keyframes h100-progress-slide {
@@ -1480,7 +1480,7 @@ html.theme-red-early {
   background: rgba(245,243,236,0.04);
   color: var(--paper-mute);
 }
-.pw-mystyle-pill--active { background: var(--green-soft); color: var(--green); }
+.pw-mystyle-pill--active { background: var(--brand-soft); color: var(--brand); }
 
 /* Event window */
 .pulse-window--event .pw-event {
@@ -3194,7 +3194,13 @@ html.theme-red-early {
 }
 .theme-light body { background: var(--ink); color: var(--paper); }
 .theme-light em, .theme-light strong, .theme-light b { color: var(--paper); }
-/* Navbar stays dark on all pages - no theme-light override */
+/* Navbar stays dark on all pages - force light text so theme-light body vars don't bleed in */
+.theme-light .navbar,
+.theme-light .brand-name,
+.theme-light .nav-menu a,
+.theme-light .nav-menu a:hover {
+  color: #fbfaf6;
+}
 /* Page hero on light pages - softer eyebrow / subtle bottom rule */
 .theme-light .page-eyebrow { color: var(--paper-mute); }
 .theme-light .page-eyebrow a:hover { border-bottom-color: var(--brand); }
