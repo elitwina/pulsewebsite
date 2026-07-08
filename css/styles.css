@@ -367,15 +367,17 @@ html.theme-red-early {
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  border: 2px solid lime !important;
+  border: 2px solid blue !important;
   background: rgba(255,0,0,0.3) !important;
 }
 .hamburger span {
   display: block;
-  height: 2px;
+  width: 100% !important;
+  height: 2px !important;
   background: #fff !important;
   border-radius: 1px;
   transition: transform 0.2s, opacity 0.2s;
+  flex-shrink: 0;
 }
 .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.active span:nth-child(2) { opacity: 0; }
