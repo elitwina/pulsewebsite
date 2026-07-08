@@ -371,7 +371,7 @@ html.theme-red-early {
 .hamburger span {
   display: block;
   height: 2px;
-  background: #fff;
+  background: #fff !important;
   border-radius: 1px;
   transition: transform 0.2s, opacity 0.2s;
 }
