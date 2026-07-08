@@ -1111,7 +1111,7 @@ html.theme-green-early {
 }
 .h100-page-title em {
   font-style: normal;
-  color: var(--green);
+  color: var(--brand);
 }
 .h100-page-lede {
   font-size: 17px;
@@ -4875,6 +4875,7 @@ html.theme-green-early {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+.mobile-cta-group { display: none; }
 
 
 /* Primary CTA - solid green button, no glow halo (Mac default) */
@@ -5007,6 +5008,27 @@ html.theme-green-early {
   .v4-trust { position: relative; bottom: auto; margin-top: 24px; }
   .v4-cta { padding: 14px 22px; font-size: 15px; }
   .desktop-cta-group { display: none; }
+  .mobile-cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+  .mobile-platform-note {
+    font-size: 13px;
+    color: rgba(245,243,236,0.5);
+    letter-spacing: 0.04em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mobile-email-cta {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
   .v4-hero-video {
     flex: 1;
     width: 100%;
