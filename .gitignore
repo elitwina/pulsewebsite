@@ -23,4 +23,4 @@ landing-v2/
 .claude/
 .serve.log
 serve.sh
-assets/fonts/
+# assets/fonts/ — tracked (self-hosted Neue Montreal)

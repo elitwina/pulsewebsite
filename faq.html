@@ -9,7 +9,7 @@
 
 <link rel="icon" href="assets/img/logo-icon-red.svg" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<link rel="stylesheet" href="css/styles.v8d.css" />
+<link rel="stylesheet" href="css/styles.v8e.css" />
 
 <!-- Google Analytics (gtag) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGX764XNQN"></script>
@@ -45,7 +45,7 @@
 })();
 </script>
 </head>
-<body class="theme-cinematic">
+<body class="theme-light">
 
 <!-- SPLASH -->
 <div id="splash" class="splash" aria-hidden="true">
@@ -67,10 +67,28 @@
 
 <!-- FULL FAQ -->
 <section class="section faq" id="faq">
+  <nav class="faq-toc" aria-label="FAQ sections">
+    <ul class="faq-toc-list">
+      <li><a href="#faq-getting-started" class="faq-toc-link">Getting Started</a></li>
+      <li><a href="#faq-recommendations" class="faq-toc-link">Recommendations</a></li>
+      <li><a href="#faq-pulse-window" class="faq-toc-link">Pulse Window</a></li>
+      <li><a href="#faq-drag-drop" class="faq-toc-link">Drag &amp; Drop</a></li>
+      <li><a href="#faq-pinning" class="faq-toc-link">Pinning &amp; Copying</a></li>
+      <li><a href="#faq-events" class="faq-toc-link">Events &amp; Requests</a></li>
+      <li><a href="#faq-dj-groups" class="faq-toc-link">DJ Groups</a></li>
+      <li><a href="#faq-hot100" class="faq-toc-link">Hot 100</a></li>
+      <li><a href="#faq-reports" class="faq-toc-link">Reports</a></li>
+      <li><a href="#faq-country" class="faq-toc-link">Country &amp; Language</a></li>
+      <li><a href="#faq-platform" class="faq-toc-link">Platform Setup</a></li>
+      <li><a href="#faq-privacy" class="faq-toc-link">Privacy &amp; Data</a></li>
+      <li><a href="#faq-troubleshooting" class="faq-toc-link">Troubleshooting</a></li>
+      <li><a href="#faq-tips" class="faq-toc-link">Tips &amp; Tricks</a></li>
+    </ul>
+  </nav>
   <div class="faq-list">
-<h3 class="faq-group-title">Getting Started</h3>
+<h3 class="faq-group-title" id="faq-getting-started">Getting Started</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What is PulseDJ?</summary>
       <div class="faq-a">
         <p>Pulse is a DJ copilot for macOS and Windows. It watches what you're playing in your DJ software and suggests what to play next, based on what thousands of DJs have played in similar situations. Think of it as a second brain that knows what works on the dancefloor.</p>
@@ -78,21 +96,21 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What does each control in the Pulse Window do?</summary>
       <div class="faq-a">
         <p>See the <a href="quick-guide.html">Quick Guide</a>.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Which DJ software is supported by Pulse?</summary>
       <div class="faq-a">
         <p>We currently support Serato, Rekordbox, Traktor, Virtual DJ and djay Pro.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Which operating systems does Pulse support?</summary>
       <div class="faq-a">
         <p>Pulse is available on both <strong>Mac</strong> and <strong>Windows</strong>.</p>
@@ -103,7 +121,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What minimum operating system does Pulse require?</summary>
       <div class="faq-a">
         <ul>
@@ -113,7 +131,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Do I need an internet connection (Wi-Fi) when using Pulse?</summary>
       <div class="faq-a">
         <p>You can use Pulse at parties without an internet connection. You only need a network connection during the first hour or so - Pulse analyzes your history and loads a local database so you can use it offline later. When you <em>do</em> have an internet connection during a party, it can improve the suggestions you get.</p>
@@ -121,7 +139,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Is Pulse free? How does Pulse make money?</summary>
       <div class="faq-a">
         <p>Pulse's full functionality is available in the Free plan.</p>
@@ -130,14 +148,14 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Is there a paid or premium version coming?</summary>
       <div class="faq-a">
         <p>Every feature is available in the Free plan. Pro plans add speed, remove limits, and help fund ongoing development.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How do I update to the latest version of Pulse?</summary>
       <div class="faq-a">
         <p>Pulse automatically notifies you when a new version is available - just follow the on-screen prompt to update. You can also update manually by downloading the latest version from <a href="https://pulsedj.com" target="_blank" rel="noopener">pulsedj.com</a>. Installing over your existing version is safe - all your settings and history are preserved.</p>
@@ -145,7 +163,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How do I set up Pulse for the first time?</summary>
       <div class="faq-a">
         <p>When you first launch Pulse, an onboarding wizard walks you through:</p>
@@ -160,63 +178,63 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Can I change my DJ platform settings after initial setup?</summary>
       <div class="faq-a">
         <p>Yes. Go to <strong>Profile → Platform Settings</strong> to re-run the setup wizard. This is useful if you install a new DJ platform or need to change the folder path.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Do I need an account to use Pulse?</summary>
       <div class="faq-a">
         <p>Yes, you need to create a PulseDJ account to use the app, but it's quick, simple, and free. The app guides you through the sign-up process on first launch.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Do I need to stop using my current DJ software to use Pulse?</summary>
       <div class="faq-a">
         <p>Not at all. Pulse is designed as a companion tool that runs <em>alongside</em> your DJ software - it enhances your existing setup without replacing anything. You keep mixing on the platform you're most comfortable with.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Does Pulse work with my DJ controller, mixer, or CDJs?</summary>
       <div class="faq-a">
         <p>Yes. Because Pulse integrates with your DJ software (not your hardware directly), it works with any controller, mixer, or CDJ setup that is compatible with your DJ software. No changes to your physical gear needed.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Does Pulse support Apple Silicon and Intel Macs?</summary>
       <div class="faq-a">
         <p>Yes. Pulse supports both Apple Silicon (M1/M2/M3/M4) and Intel Macs, as long as you're running macOS 11 or later.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Can I run Pulse on multiple computers?</summary>
       <div class="faq-a">
         <p>Yes. Install Pulse on as many machines as you like and sign in with the same account on each. This keeps your full playing history synced across devices so your personalized MyStyle suggestions follow you everywhere.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Does Pulse support multiple libraries or external drives?</summary>
       <div class="faq-a">
         <p>Yes. If you keep music on external drives or across multiple libraries, make sure the paths in <strong>Profile → Platform Settings</strong> point to the correct history/library locations so suggestions stay accurate.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Will Pulse change any of my crates, playlists, or track files?</summary>
       <div class="faq-a">
         <p>No. Pulse only <em>reads</em> your library and history data - it never modifies your audio files, crates, or playlists.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How long does it take until Pulse gives good suggestions?</summary>
       <div class="faq-a">
         <p>Pulse gives you two kinds of suggestions that work on different timelines:</p>
@@ -227,7 +245,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>My DJ software isn't on the supported list - will it still work?</summary>
       <div class="faq-a">
         <p>Currently we only guarantee full support for Serato, Rekordbox, Traktor, VirtualDJ, and djay Pro. We continuously work to expand compatibility based on user feedback. If you use a different platform, let us know at <a href="mailto:support@pulsedj.com">support@pulsedj.com</a>.</p>
@@ -235,9 +253,9 @@
     </details>
 
 
-    <h3 class="faq-group-title">Using Pulse - Recommendations</h3>
+    <h3 class="faq-group-title" id="faq-recommendations">Using Pulse - Recommendations</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How do recommendations work?</summary>
       <div class="faq-a">
         <p>When you play a track in your DJ software, Pulse detects it and shows a list of suggested next tracks. These suggestions are based on what thousands of DJs have played after the same (or similar) tracks across millions of analyzed song-pairs.</p>
@@ -252,14 +270,14 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What does the green color bar next to the song mean?</summary>
       <div class="faq-a">
         <p>The green bar shows the relevance of the suggested song to the current point in the party, based on the order of songs that you've played till now.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What do the different recommendation modes do?</summary>
       <div class="faq-a">
         <p>Pulse offers several recommendation algorithms you can switch between:</p>
@@ -273,28 +291,28 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Can I see the BPM and key of suggested tracks?</summary>
       <div class="faq-a">
         <p>Yes. BPM and key are shown for each suggested track. In the Pulse Window (floating view), BPM appears on hover. In the full view, it's always visible. You can toggle between <strong>Camelot notation</strong> (e.g., 8A, 11B) and <strong>standard musical keys</strong> (e.g., Am, F) in <strong>Profile → Extra Features → Use Musical Keys</strong>.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Why does Pulse sometimes recommend a track that is more than 10 BPMs away from the track I'm currently playing?</summary>
       <div class="faq-a">
         <p>Pulse doesn't mind if keylock is on or off. Regarding the recommendations that are way off the BPM - Pulse only suggests &plusmn;10 BPMs from the currently playing track. However, if one of the tracks has had its BPM modified in your library, then Pulse uses that as the "real" BPM and that could be the cause.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What does "Same Artist" mean on a suggestion?</summary>
       <div class="faq-a">
         <p>When a suggestion is by the same artist as the previously played track, Pulse marks it with a "Same Artist" label and dims it slightly. It's still there if you want it, but deprioritized so you can spot variety more easily.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Why are some suggestions greyed out?</summary>
       <div class="faq-a">
         <p>Suggestions are dimmed when:</p>
@@ -306,7 +324,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What is "Auto stay in genre"?</summary>
       <div class="faq-a">
         <p>When enabled in <strong>Profile → Extra Features</strong>, Pulse filters recommendations to stay within the genre you're currently playing. This is helpful for genre-specific sets.</p>
@@ -314,9 +332,9 @@
     </details>
 
 
-    <h3 class="faq-group-title">Pulse Window (Floating View)</h3>
+    <h3 class="faq-group-title" id="faq-pulse-window">Pulse Window (Floating View)</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What is the Pulse Window?</summary>
       <div class="faq-a">
         <p>The Pulse Window is a compact, always-on-top floating panel that shows your recommendations while you DJ. It stays visible over your DJ software so you can glance at suggestions without switching windows. Access it from the sidebar by clicking the <strong>pin icon</strong> or "Pulse Window".</p>
@@ -324,7 +342,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Can I resize the Pulse Window text?</summary>
       <div class="faq-a">
         <p>Yes. Go to <strong>Profile → Configuration</strong> and adjust the <strong>Suggestion Font Size</strong> and <strong>Suggestion Spacing</strong> sliders to make the text larger/smaller and adjust spacing between recommendations.</p>
@@ -332,9 +350,9 @@
     </details>
 
 
-    <h3 class="faq-group-title">Drag &amp; Drop</h3>
+    <h3 class="faq-group-title" id="faq-drag-drop">Drag &amp; Drop</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Can I load a track from Pulse directly to my DJ software?</summary>
       <div class="faq-a">
         <p><strong>Yes - if the track is on your computer.</strong> Tracks with a green <strong>drag handle icon</strong> (six dots) can be dragged directly from Pulse into your DJ software's deck or playlist. Just grab the drag handle and drop it where you want.</p>
@@ -342,7 +360,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What does the grey drag icon mean?</summary>
       <div class="faq-a">
         <p>A greyed-out drag icon means the track file isn't currently available on your computer. This can happen if:</p>
@@ -355,7 +373,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How do I filter recommendations to only show tracks I have locally?</summary>
       <div class="faq-a">
         <p>Toggle the <strong>Local Tracks Filter</strong> to only see recommendations for tracks that exist on your computer. This is especially useful during live sets when you want suggestions you can actually play.</p>
@@ -363,16 +381,16 @@
     </details>
 
 
-    <h3 class="faq-group-title">Pinning &amp; Copying</h3>
+    <h3 class="faq-group-title" id="faq-pinning">Pinning &amp; Copying</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Can I pin a recommendation?</summary>
       <div class="faq-a">
         <p>Yes. Hover over a recommendation and click the <strong>pin icon</strong> to pin it to the top of your list. Pinned tracks stay visible even as recommendations change - even when you switch to a new song. To unpin, hover and click the <strong>unpin icon</strong>.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How do I copy a track name?</summary>
       <div class="faq-a">
         <p>Click any track in the recommendation list to copy its name to your clipboard. You can also hover and click the <strong>copy icon</strong> for the same result. Paste it into your DJ software's search bar to find the track.</p>
@@ -380,9 +398,9 @@
     </details>
 
 
-    <h3 class="faq-group-title">Events &amp; Song Requests</h3>
+    <h3 class="faq-group-title" id="faq-events">Events &amp; Song Requests</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What are Events in Pulse?</summary>
       <div class="faq-a">
         <p>Events let you create named DJ events (e.g., "Friday Night at Club X") and generate a unique QR code for each one. Share the QR code with your audience so they can request songs.</p>
@@ -390,7 +408,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How do Song Requests work?</summary>
       <div class="faq-a">
         <p>Song Requests let your audience request tracks during your set:</p>
@@ -405,9 +423,9 @@
     </details>
 
 
-    <h3 class="faq-group-title">DJ Groups</h3>
+    <h3 class="faq-group-title" id="faq-dj-groups">DJ Groups</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What are DJ Groups?</summary>
       <div class="faq-a">
         <p>DJ Groups let you connect with other DJs. Create a group or join one with a code, and share your music style data. This helps Pulse learn from a broader pool of DJ preferences and can improve recommendations.</p>
@@ -416,9 +434,9 @@
     </details>
 
 
-    <h3 class="faq-group-title">Hot 100</h3>
+    <h3 class="faq-group-title" id="faq-hot100">Hot 100</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What is the Hot 100?</summary>
       <div class="faq-a">
         <p>The Hot 100 is a real-time chart of the 100 most-played tracks across all Pulse DJs. It helps you discover trending tracks, identify what's gaining momentum, and get inspiration for your sets.</p>
@@ -426,14 +444,14 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Where does the Hot 100 data come from?</summary>
       <div class="faq-a">
         <p>The chart is generated from anonymous, aggregated play data from all active PulseDJ users. It directly reflects what tracks are being mixed on dance floors right now - making it one of the most accurate real-world DJ charts available.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Can I filter the Hot 100 by country or genre?</summary>
       <div class="faq-a">
         <p>Yes - two filters are available:</p>
@@ -445,21 +463,21 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How often is the Hot 100 updated?</summary>
       <div class="faq-a">
         <p>The chart updates continuously to reflect what DJs are playing right now. A <strong>"NEW"</strong> badge in the sidebar tells you when fresh data is available.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Does the Hot 100 include older classics or only new releases?</summary>
       <div class="faq-a">
         <p>It reflects what DJs are actually playing - which can include both brand new releases and evergreen classics that are trending in current sets. There's no cutoff by release date.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Can I view historical Hot 100 data or see how a track trended over time?</summary>
       <div class="faq-a">
         <p>Historical charting is on our roadmap. For now, the Hot 100 focuses on real-time popularity.</p>
@@ -467,9 +485,9 @@
     </details>
 
 
-    <h3 class="faq-group-title">Reports</h3>
+    <h3 class="faq-group-title" id="faq-reports">Reports</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What are Reports?</summary>
       <div class="faq-a">
         <p>After each DJ session, Pulse generates a detailed report with:</p>
@@ -487,9 +505,9 @@
     </details>
 
 
-    <h3 class="faq-group-title">Country &amp; Language</h3>
+    <h3 class="faq-group-title" id="faq-country">Country &amp; Language</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How does country selection affect recommendations?</summary>
       <div class="faq-a">
         <p>Pulse lets you select one or more countries to tailor your recommendations to regional music preferences. Different countries have different DJ cultures and popular tracks. Access the country selector from the <strong>globe icon</strong> in the sidebar.</p>
@@ -497,7 +515,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Can I change the language of Pulse?</summary>
       <div class="faq-a">
         <p>Yes. Pulse supports 8 languages:</p>
@@ -516,16 +534,16 @@
     </details>
 
 
-    <h3 class="faq-group-title">Platform-Specific Setup</h3>
+    <h3 class="faq-group-title" id="faq-platform">Platform-Specific Setup</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Can Pulse interfere with my DJ software or cause it to crash?</summary>
       <div class="faq-a">
         <p>No. When Pulse loads for the first time, it may ask you to adjust a setting in Rekordbox, VirtualDJ, or Traktor (like "time to save to history" or broadcasting settings). After that, Pulse never modifies your DJ software. It simply reads the history files that your software writes to disk to understand what tracks you've played, so you're always in full control.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How does Pulse work with Serato?</summary>
       <div class="faq-a">
         <p>Pulse reads Serato's history files from the <code>_Serato_</code> folder (default: <code>~/Music/_Serato_/</code>). No additional configuration needed - just play a track in Serato and Pulse picks it up.</p>
@@ -538,7 +556,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How does Pulse work with Rekordbox?</summary>
       <div class="faq-a">
         <p>Pulse reads Rekordbox's history database. On first launch, Pulse will ask to update a Rekordbox setting (history write interval). After that:</p>
@@ -551,7 +569,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How does Pulse work with Traktor?</summary>
       <div class="faq-a">
         <p>Pulse uses Traktor's <strong>broadcasting</strong> feature to detect what's playing. On first setup:</p>
@@ -571,7 +589,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How does Pulse work with VirtualDJ?</summary>
       <div class="faq-a">
         <p>Pulse reads VirtualDJ's history <code>.m3u</code> files and database. On first setup:</p>
@@ -589,7 +607,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How does Pulse work with djay Pro?</summary>
       <div class="faq-a">
         <p>Pulse reads djay Pro's local database to detect tracks. Setup is handled automatically during onboarding. Just play a track in djay Pro and Pulse will show suggestions.</p>
@@ -597,9 +615,9 @@
     </details>
 
 
-    <h3 class="faq-group-title">Privacy &amp; Data</h3>
+    <h3 class="faq-group-title" id="faq-privacy">Privacy &amp; Data</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Which information does Pulse DJ collect from DJs?</summary>
       <div class="faq-a">
         <p>On our homepage you can see how many parties Pulse has analyzed (3,300,000 as of Mar/2026) and the number of song-pairs analyzed (300,000,000 as of Mar/2026).</p>
@@ -609,9 +627,9 @@
     </details>
 
 
-    <h3 class="faq-group-title">Troubleshooting</h3>
+    <h3 class="faq-group-title" id="faq-troubleshooting">Troubleshooting</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Why is Pulse not working for me?</summary>
       <div class="faq-a">
         <p><strong>Serato</strong></p>
@@ -655,28 +673,28 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>I get suggestions on songs that I load to the deck, even if I haven't played them to the speakers.</summary>
       <div class="faq-a">
         <p>When a track is loaded to the deck, Serato and other DJ software write the name of the track into the history file, and Pulse can't know if it was played or just queued, so it recommends next songs for that track. A workaround is to press the <strong>left arrow</strong> next to the "Now Playing" in Pulse to go back to the previous song and its suggestions.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How can I send my logs for troubleshooting?</summary>
       <div class="faq-a">
         <p>If our support team asks for your logs, go to <strong>Profile → Configuration</strong> and click <strong>Upload Log</strong>. This sends your Pulse log file to our team so we can diagnose issues.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Pulse says my file isn't available locally - what does that mean?</summary>
       <div class="faq-a">
         <p>This means Pulse remembers the track from a past session, but can't find the audio file on your computer. It may have been moved, deleted, or played from a USB drive that isn't connected. Play the track once from a local file and Pulse will remember it for next time.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>My suggestion panel is blank even after playing a few tracks. What's wrong?</summary>
       <div class="faq-a">
         <p>A few common causes:</p>
@@ -689,7 +707,7 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>The app won't let me sign in. What should I do?</summary>
       <div class="faq-a">
         <p>If you're unable to sign in, try the following:</p>
@@ -702,14 +720,14 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>The language in my app is stuck in German (or another language). How do I fix it?</summary>
       <div class="faq-a">
         <p>This was a known bug in older versions. Update to Pulse v2.7.2 or later - the fix is included. You can also manually change the language in <strong>Profile → Configuration → Language</strong>.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>VirtualDJ's MyStyle section says "not enough history for this song." How do I fix it?</summary>
       <div class="faq-a">
         <p>This usually means Pulse can't find VirtualDJ's history file - often because VirtualDJ is installed in a non-default location or your music is on an external drive.</p>
@@ -717,49 +735,49 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Pulse can't find my history after I moved my music library. What should I do?</summary>
       <div class="faq-a">
         <p>Open <strong>Profile → Platform Settings</strong> and update the paths to your DJ software's history and library folders. Then restart both Pulse and your DJ software, and play a track to confirm detection.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Suggestions seem off after I retagged BPM or key in my library. Why?</summary>
       <div class="faq-a">
         <p>Pulse uses the BPM values stored in your library. If you've changed BPMs, the updated values will be picked up on the next detection. Play a few tracks and the suggestions will realign to your updated metadata.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>I'm seeing duplicate entries in my suggestions. How do I fix this?</summary>
       <div class="faq-a">
         <p>Duplicates usually come from duplicate files or multiple library locations pointing to the same track. Consolidate your music library and make sure the correct paths are set in <strong>Profile → Platform Settings</strong>.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>My suggestions panel shows irrelevant genres. What should I do?</summary>
       <div class="faq-a">
         <p>Play a few tracks from your target genre - Pulse adapts in real time to the direction your set is going. You can also enable <strong>Auto Stay in Genre</strong> in <strong>Profile → Extra Features</strong> to keep suggestions within your current genre.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Can I hide or mute a suggestion I don't want to see?</summary>
       <div class="faq-a">
         <p>A dedicated hide/mute control for individual suggestions is on our roadmap. For now, keep playing the styles you want more of - Pulse will learn your preferences over time.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How do I report an issue or provide feedback?</summary>
       <div class="faq-a">
         <p>You can report issues or provide feedback directly through the Pulse app or by contacting our support team at <a href="mailto:support@pulsedj.com">support@pulsedj.com</a>.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>Where can I connect with other Pulse DJs?</summary>
       <div class="faq-a">
         <p>Join the <strong>Pulse DJ Facebook Group</strong> - accessible directly from the sidebar (Facebook icon at the bottom). Connect with other DJs, share tips, and give feedback: <a href="https://www.facebook.com/groups/2051844701930444" target="_blank" rel="noopener">facebook.com/groups/2051844701930444</a></p>
@@ -767,9 +785,9 @@
     </details>
 
 
-    <h3 class="faq-group-title">Tips &amp; Tricks</h3>
+    <h3 class="faq-group-title" id="faq-tips">Tips &amp; Tricks</h3>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What keyboard shortcuts does Pulse support?</summary>
       <div class="faq-a">
         <ul>
@@ -780,14 +798,14 @@
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>What are Remixes in the recommendation list?</summary>
       <div class="faq-a">
         <p>When a recommendation has known remixes, Pulse groups them under a <strong>REMIX</strong> label with a chevron. Click or hover to expand and see all remix versions with their individual relevance bars. This helps you pick the right version for the moment.</p>
       </div>
     </details>
 
-    <details class="faq-item">
+    <details class="faq-item" open>
       <summary>How do I search for a specific track?</summary>
       <div class="faq-a">
         <p>Use the <strong>Search</strong> field at the top of the Pulse Window. Start typing a track name and Pulse will show autocomplete suggestions. Select a track to see recommendations for it - even if it's not currently playing.</p>
@@ -846,6 +864,64 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20260708b"></script>
+<script src="js/main.js?v=20260708d"></script>
+<script>
+(function() {
+  var links = Array.from(document.querySelectorAll('.faq-toc-link'));
+  var headings = links.map(function(l) {
+    return document.querySelector(l.getAttribute('href'));
+  }).filter(Boolean);
+
+  if (!links.length || !headings.length) return;
+
+  var listEl = document.querySelector('.faq-list');
+  if (!listEl) return;
+
+  var current = null;
+  var manualScrolling = false;
+  var manualScrollTimer = null;
+
+  // Root is .faq-list because the section is a sticky container - headings
+  // are always inside the viewport from the page perspective, so we track
+  // intersection within the scrollable list element instead.
+  var io = new IntersectionObserver(function(entries) {
+    if (manualScrolling) return;
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var id = '#' + entry.target.id;
+        var link = document.querySelector('.faq-toc-link[href="' + id + '"]');
+        if (link && link !== current) {
+          if (current) current.classList.remove('is-active');
+          link.classList.add('is-active');
+          current = link;
+        }
+      }
+    });
+  }, { root: listEl, rootMargin: '-16px 0px -60% 0px', threshold: 0 });
+
+  headings.forEach(function(h) { io.observe(h); });
+
+  // Smooth scroll within .faq-list on TOC click
+  links.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+
+      if (current) current.classList.remove('is-active');
+      link.classList.add('is-active');
+      current = link;
+
+      manualScrolling = true;
+      clearTimeout(manualScrollTimer);
+
+      var top = target.getBoundingClientRect().top - listEl.getBoundingClientRect().top + listEl.scrollTop - 16;
+      listEl.scrollTo({ top: top, behavior: 'smooth' });
+
+      manualScrollTimer = setTimeout(function() { manualScrolling = false; }, 700);
+    });
+  });
+})();
+</script>
 </body>
 </html>

@@ -20,12 +20,16 @@
       window.location.pathname.endsWith('/') ||
       window.location.pathname.endsWith('/index.html')
     );
+    const p = window.location.pathname.split('/').pop().replace(/\?.*$/, '');
 
     const a = (path, text, cls) => {
       const href = isHome && path.startsWith('index.html#')
         ? '#' + path.split('#')[1]
         : b + path;
-      return `<li${cls ? ' class="' + cls + '"' : ''}><a href="${href}">${text}</a></li>`;
+      const pageName = path.split('#')[0];
+      const isCurrent = !inBlog && p && pageName && p === pageName;
+      const classes = [cls, isCurrent ? 'nav-active' : ''].filter(Boolean).join(' ');
+      return `<li${classes ? ' class="' + classes + '"' : ''}><a href="${href}"${isCurrent ? ' aria-current="page"' : ''}>${text}</a></li>`;
     };
 
     nav.innerHTML = `
@@ -268,7 +272,11 @@
       const target = document.querySelector(id);
       if (!target) return; // element not on this page - let browser handle it
       e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 70;
+      const nav = document.getElementById('navbar');
+      const navH = nav ? nav.offsetHeight : 76;
+      const heading = target.querySelector('.line-title, h2, h3');
+      const anchor = heading || target;
+      const top = anchor.getBoundingClientRect().top + window.scrollY - navH - 24;
       window.scrollTo({ top, behavior: 'smooth' });
     });
   });
@@ -453,7 +461,11 @@
       setTimeout(() => {
         const target = document.querySelector(hash);
         if (!target) return;
-        const top = target.getBoundingClientRect().top + window.scrollY - 70;
+        const nav = document.getElementById('navbar');
+        const navH = nav ? nav.offsetHeight : 76;
+        const heading = target.querySelector('.line-title, h2, h3');
+        const anchor = heading || target;
+        const top = anchor.getBoundingClientRect().top + window.scrollY - navH - 24;
         window.scrollTo({ top, behavior: 'smooth' });
       }, 80);
     };
