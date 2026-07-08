@@ -35,6 +35,15 @@
 </script>
 <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=594220423750495&ev=PageView&noscript=1" alt="" /></noscript>
+<script>
+(function(){
+  var t;
+  try { t = localStorage.getItem('pulse_color_theme'); } catch(e) {}
+  if (t !== 'green') {
+    document.documentElement.classList.add('theme-red-early');
+  }
+})();
+</script>
 </head>
 <body class="theme-cinematic">
 
