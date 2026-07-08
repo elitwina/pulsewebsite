@@ -2424,44 +2424,44 @@ html.theme-green-early {
 .section.faq.reveal,
 .section.faq.reveal.visible { transform: none; opacity: 1; transition: none; }
 
-/* Grid layout only when a TOC is present (faq.html), not on landing page.
-   The section becomes a sticky full-height panel; internal columns scroll. */
-.section.faq:has(.faq-toc) > .faq-toc,
-.section.faq:has(.faq-toc) > .faq-list {
-  max-width: none;
-  padding-left: 0;
-  padding-right: 0;
-}
-.section.faq:has(.faq-toc) {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  align-items: stretch;
-  gap: 0 48px;
-  max-width: none;
-  margin-inline: 0;
-  padding: 24px var(--pad) 0;
-  /* Sticky: sticks below navbar and fills rest of viewport */
-  position: sticky;
-  top: 75px;
-  height: calc(100svh - 75px);
-  overflow: hidden;
-  z-index: 10;
-}
-
-/* TOC column: no longer needs its own sticky - it lives inside the stuck section */
-.section.faq:has(.faq-toc) > .faq-toc {
-  position: relative;
-  top: auto;
-  align-self: stretch;
-  max-height: none;
-  overflow-y: auto;
-  padding-bottom: 48px;
-}
-
-/* Question list: the scrollable column */
-.section.faq:has(.faq-toc) > .faq-list {
-  overflow-y: auto;
-  padding-bottom: 80px;
+/* Grid layout + sticky panel only on desktop (TOC is hidden below 800px).
+   :has() matches by DOM presence, not visibility, so must be gated with min-width. */
+@media (min-width: 801px) {
+  .section.faq:has(.faq-toc) > .faq-toc,
+  .section.faq:has(.faq-toc) > .faq-list {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section.faq:has(.faq-toc) {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: stretch;
+    gap: 0 48px;
+    max-width: none;
+    margin-inline: 0;
+    padding: 24px var(--pad) 0;
+    /* Sticky: sticks below navbar and fills rest of viewport */
+    position: sticky;
+    top: 75px;
+    height: calc(100svh - 75px);
+    overflow: hidden;
+    z-index: 10;
+  }
+  /* TOC column: lives inside the stuck section */
+  .section.faq:has(.faq-toc) > .faq-toc {
+    position: relative;
+    top: auto;
+    align-self: stretch;
+    max-height: none;
+    overflow-y: auto;
+    padding-bottom: 48px;
+  }
+  /* Question list: the scrollable column */
+  .section.faq:has(.faq-toc) > .faq-list {
+    overflow-y: auto;
+    padding-bottom: 80px;
+  }
 }
 
 .faq-toc {
@@ -2821,6 +2821,8 @@ html.theme-green-early {
 
 @media (max-width: 640px) {
   .page-hero { padding: 100px 20px 32px; }
+  .faq-page-hero { padding: 100px var(--pad) 32px; }
+  .h100-page-hero { padding: 100px var(--pad) 24px; }
   .prose, .steps { padding-left: 20px; padding-right: 20px; }
   .prose { font-size: 15.5px; }
   .step { grid-template-columns: 44px 1fr; gap: 16px; padding: 22px; }
