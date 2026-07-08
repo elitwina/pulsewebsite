@@ -367,8 +367,6 @@ html.theme-red-early {
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  border: 2px solid blue !important;
-  background: rgba(255,0,0,0.3) !important;
 }
 .hamburger span {
   display: block;
