@@ -2429,6 +2429,183 @@ html.theme-green-early {
 }
 
 /* ============================================================
+   PRICING - plan-* classes (exact copy from pulsedj.com)
+   rgb(77,175,80) → var(--brand)  |  rgb(6,34,7) → var(--brand-text)
+   ============================================================ */
+.section.pricing .metrics-divider-header {
+  display: flex;
+  align-items: center;
+  width: min(600px, 90%);
+  margin: 1.5rem auto 2.5rem;
+  gap: 12px;
+}
+.section.pricing .divider-line {
+  flex: 1;
+  border-top: 2px solid rgb(102,102,102);
+}
+.section.pricing .metrics-divider-text {
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgb(170,170,170);
+}
+.plan-cards-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.plan-card {
+  position: relative;
+  width: 332px;
+  background: linear-gradient(rgb(22,22,22), rgb(11,11,11));
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(255,255,255);
+}
+.plan-card--featured {
+  border-color: rgba(var(--brand-rgb), 0.85);
+  box-shadow: rgba(var(--brand-rgb), 0.18) 0px 0px 0px 5px;
+}
+.plan-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translate(-50%);
+  white-space: nowrap;
+  background: var(--brand);
+  color: var(--brand-text);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  padding: 5px 15px;
+  border-radius: 13px;
+}
+.plan-name {
+  font-size: 22px;
+  font-weight: 700;
+}
+.plan-price {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+.plan-amount {
+  font-size: 36px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.plan-price--green .plan-amount { color: var(--brand); }
+.plan-per {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.plan-sub {
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+  font-size: 13.5px;
+}
+.plan-divider {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin: 14px 0;
+}
+.plan-feature-heading {
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  flex: 1;
+}
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.9);
+}
+.plan-features li::before {
+  content: "✓";
+  color: rgba(255,255,255,0.55);
+  font-weight: 700;
+  margin-right: 10px;
+  flex: 0 0 auto;
+  line-height: 1.4;
+}
+.plan-features--pro li::before { color: var(--brand); }
+.plan-features .plan-feature--highlight .plan-feature-label { color: var(--brand); }
+.plan-feature-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.plan-feature-label {
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+.plan-feature-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 1px;
+  line-height: 1.35;
+}
+.plan-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 46px;
+  border-radius: 23px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: opacity 0.15s;
+  text-align: center;
+}
+.plan-btn__icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: -3px;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+.plan-btn--outline {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(var(--brand-rgb), 0.6);
+  color: rgb(255,255,255);
+}
+.plan-btn--outline:hover { opacity: 0.8; }
+.plan-btn--green {
+  background: var(--brand);
+  color: var(--brand-text);
+}
+.plan-btn--green:hover { opacity: 0.88; }
+
+@media (max-width: 640px) {
+  .plan-cards-grid { flex-direction: column; max-width: 420px; }
+}
+
+/* ============================================================
    FAQ
    ============================================================ */
 /* FAQ layout: sticky TOC sidebar + questions */
