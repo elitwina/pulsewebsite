@@ -2230,102 +2230,100 @@ html.theme-green-early {
 /* ============================================================
    PRICING - three cards, middle featured (OfflineDJ pattern)
    ============================================================ */
-/* "CHOOSE YOUR PLAN" eyebrow with side rules */
+/* "CHOOSE YOUR PLAN" eyebrow - exact match to pulsedj.com metrics-divider-header */
 .pricing-divider-header {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 .pricing-divider-line {
   flex: 1;
   height: 1px;
-  background: var(--line);
+  background: rgba(255,255,255,0.12);
 }
 .pricing-divider-text {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  letter-spacing: 0.14em;
-  color: var(--paper-mute);
+  font-size: 13px;
+  color: rgb(170,170,170);
   white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
+/* Cards: flex row matching live site's plan-cards-grid */
 .price-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 18px;
-  align-items: start;
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
 }
 .price-card {
-  background: var(--card-bg);
-  border: 1px solid var(--line);
-  border-radius: var(--card-radius);
-  padding: 38px 32px;
+  flex: 1;
+  background: linear-gradient(rgb(22,22,22), rgb(11,11,11));
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 20px;
+  padding: 24px 26px;
   display: flex;
   flex-direction: column;
-  gap: 0;
   position: relative;
-  box-shadow: var(--card-shadow);
 }
 .price-card--featured {
-  background:
-    radial-gradient(ellipse at top, rgba(var(--brand-rgb), 0.10) 0%, transparent 60%),
-    var(--card-bg-lit);
-  border-color: var(--brand-line);
-  box-shadow: 0 30px 80px -30px var(--brand-glow), var(--card-shadow);
+  border-color: rgba(var(--brand-rgb), 0.85);
+  box-shadow: rgba(var(--brand-rgb), 0.18) 0 0 0 5px;
+  background: linear-gradient(rgb(22,22,22), rgb(11,11,11));
 }
 .price-badge {
   position: absolute;
-  top: -12px;
+  top: -13px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--brand);
-  color: #fff;
-  font-family: var(--font-mono);
+  color: var(--brand-text);
   font-size: 11px;
-  letter-spacing: 0.12em;
-  padding: 5px 14px;
-  border-radius: 999px;
   font-weight: 700;
-  box-shadow: 0 6px 18px -4px rgba(var(--brand-rgb), 0.55);
+  padding: 5px 15px;
+  border-radius: 13px;
+  white-space: nowrap;
 }
 .price-name {
+  font-size: 22px;
   font-weight: 700;
-  font-size: 18px;
-  color: var(--paper);
-  letter-spacing: -0.01em;
-  margin-bottom: 10px;
+  color: #fff;
+  margin-bottom: 8px;
 }
+/* Price row: amount + /month inline */
 .price-num {
-  font-size: 52px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1;
   display: flex;
   align-items: baseline;
-  gap: 6px;
+  gap: 5px;
+  line-height: 1;
 }
-.price-num--brand { color: var(--brand); }
-.price-num sup {
-  font-size: 24px;
-  vertical-align: 18px;
-  color: var(--brand);
-  font-weight: 600;
-  margin-right: 2px;
+.price-num b {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
 }
+.price-num--brand b { color: var(--brand); }
 .price-num small {
   font-size: 14px;
-  color: var(--paper-dim);
-  font-weight: 500;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
 }
-.price-num--soon {
-  font-size: 24px;
-  color: var(--paper-dim);
-}
+.price-num--soon { font-size: 24px; color: rgba(255,255,255,0.5); }
 .price-meta {
-  font-size: 13px;
-  color: var(--paper-mute);
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.5);
   margin-top: 6px;
+}
+.price-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.10);
+  margin: 14px 0;
+}
+.price-list-head {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 12px;
 }
 .price-list {
   list-style: none;
@@ -2333,113 +2331,80 @@ html.theme-green-early {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  text-align: left;
   flex: 1;
 }
 .price-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 10px;
+  padding-left: 22px;
   position: relative;
-  padding-left: 26px;
-  font-size: 14px;
-  color: var(--paper-dim);
+  font-size: 14.5px;
+}
+/* Green checkmark via ::before - matches live site tick */
+.price-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 14px;
+  height: 14px;
+  background: var(--brand);
+  border-radius: 50%;
+  flex-shrink: 0;
+  clip-path: polygon(20% 52%, 5% 68%, 38% 96%, 98% 20%, 82% 8%, 38% 68%);
+}
+.price-feature-text {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-.price-list li::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0.45em;
-  width: 13px; height: 13px;
-  background: var(--brand);
-  border-radius: 3px;
-  clip-path: polygon(20% 50%, 0% 70%, 40% 100%, 100% 25%, 80% 10%, 40% 70%);
-}
 .price-feature-label {
-  font-weight: 600;
-  color: var(--paper);
-  font-size: 14px;
+  font-size: 14.5px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
 }
 .price-feature-desc {
-  font-size: 12.5px;
-  color: var(--paper-mute);
-  font-weight: 400;
-}
-.price-list--muted li { color: var(--paper-mute); }
-.price-list--muted li::before { background: var(--paper-mute); }
-.price-divider {
-  border: 0;
-  height: 1px;
-  background: var(--line);
-  margin: 28px 0 22px;
-}
-.price-list-head {
   font-size: 13px;
-  font-weight: 500;
-  color: var(--paper-dim);
-  margin-bottom: 18px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
 }
+.price-list--muted li { opacity: 0.5; }
+
+/* Buttons - pill shape matching live site plan-btn */
 .price-cta {
-  margin-top: 28px;
-  display: inline-block;
-  padding: 14px 24px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 14.5px;
-  border: 1px solid var(--line-strong);
-  background: transparent;
-  color: var(--paper);
-  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  width: 100%;
+  height: 46px;
+  border-radius: 23px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid rgba(var(--brand-rgb), 0.6);
+  background: rgba(255,255,255,0.02);
+  color: #fff;
+  transition: background 0.18s, border-color 0.18s;
   text-align: center;
 }
 .price-cta:hover {
-  border-color: var(--brand);
-  color: var(--brand);
+  background: rgba(var(--brand-rgb), 0.08);
+  border-color: rgba(var(--brand-rgb), 0.9);
+  color: #fff;
 }
 .price-cta--filled {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  color: var(--brand-text);
-  font-weight: 700;
+  background: var(--brand);
   border-color: transparent;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0) 55%),
-    linear-gradient(180deg, var(--brand-light) 0%, var(--brand-deep) 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.25),
-    inset 0 0 0 1px rgba(var(--brand-rgb), 0.9),
-    0 6px 14px -6px rgba(0,0,0,0.55);
+  color: var(--brand-text);
 }
-.price-cta--filled::before {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  left: -75%;
-  width: 60%;
-  background: linear-gradient(
-    100deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0) 35%,
-    rgba(255, 255, 255, 0.55) 50%,
-    rgba(255, 255, 255, 0) 65%,
-    transparent 100%
-  );
-  transform: skewX(-18deg);
-  transition: left 0.75s cubic-bezier(.4, 0, .2, 1);
-  pointer-events: none;
-  mix-blend-mode: screen;
-  z-index: 0;
-}
-.price-cta--filled:hover::before { left: 130%; }
 .price-cta--filled:hover {
-  filter: brightness(1.04);
+  filter: brightness(1.06);
   color: var(--brand-text);
   border-color: transparent;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.32),
-    inset 0 0 0 1px rgba(var(--brand-rgb), 1),
-    0 8px 18px -6px rgba(0,0,0,0.6);
+  box-shadow: none;
 }
 .price-cta--disabled {
   border: 1px dashed var(--line);
@@ -3220,8 +3185,8 @@ html.theme-green-early {
   .cap-strip { grid-template-columns: 1fr 1fr; }
   .stats-row { grid-template-columns: 1fr; gap: 20px; }
   .t-grid { grid-template-columns: 1fr; }
-  .price-cards { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
-  .pricing-divider-header { margin-bottom: 32px; }
+  .price-cards { flex-direction: column; max-width: 420px; margin-inline: auto; }
+  .pricing-divider-header { margin-bottom: 28px; }
   .contact-grid { grid-template-columns: 1fr 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
