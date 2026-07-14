@@ -3383,7 +3383,7 @@ html.theme-green-early {
     flex-direction: column;
     background: #0a0a0c;
     padding: 24px var(--pad) 32px;
-    gap: 4px;
+    gap: 12px;
     margin: 0;
     overflow-y: auto;
     z-index: 70;
