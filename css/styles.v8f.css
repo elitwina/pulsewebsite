@@ -5247,7 +5247,8 @@ html.theme-green-early {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 0;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .v4-h1 {
