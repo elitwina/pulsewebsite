@@ -146,6 +146,20 @@
     }));
   }
 
+  // Single Download CTA: OS-detect, route Mac/Win/Mobile to the right link
+  (function () {
+    const cta = document.getElementById('download-cta');
+    if (!cta) return;
+    const ua = navigator.userAgent || '';
+    const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+    const isWindows = /Windows/i.test(ua);
+    let href = cta.dataset.mac;
+    if (isMobile) href = cta.dataset.mail;
+    else if (isWindows) href = cta.dataset.win;
+    cta.href = href;
+    if (isWindows) { cta.target = '_blank'; cta.rel = 'noopener'; }
+  })();
+
   // Reusable vertical-rotator helper. Expects a track of N items where the
   // last item is a duplicate of the first, so the loop reset is invisible.
   // Optionally syncs the parent container width to the current item's width,

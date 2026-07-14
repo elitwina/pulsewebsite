@@ -5283,6 +5283,28 @@ html.theme-green-early {
 }
 .mobile-cta-group { display: none; }
 
+/* Single-CTA layout: one button + grey "works with" subtext */
+.v4-cta-single {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+.v4-cta--primary i { font-size: 22px; }
+.v4-cta-label {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: inherit;
+}
+.v4-cta-supports {
+  margin: 0;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
 
 /* Primary CTA - solid green button, no glow halo (Mac default) */
 .v4-cta {
@@ -5413,24 +5435,12 @@ html.theme-green-early {
   .v4-sub { font-size: 15px; max-width: none; }
   .v4-trust { position: relative; bottom: auto; margin-top: 24px; }
   .v4-cta { padding: 14px 22px; font-size: 15px; }
-  .desktop-cta-group { display: none; }
-  .mobile-cta-group {
-    display: flex;
-    flex-direction: column;
+  .v4-cta-single {
     align-items: center;
-    gap: 12px;
     width: 100%;
+    gap: 12px;
   }
-  .mobile-platform-note {
-    font-size: 13px;
-    color: rgba(245,243,236,0.5);
-    letter-spacing: 0.04em;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .mobile-email-cta {
+  .v4-cta--primary {
     width: 100%;
     max-width: 320px;
     height: 52px;
@@ -5438,21 +5448,13 @@ html.theme-green-early {
     justify-content: center;
     gap: 10px;
   }
-  .mobile-email-cta i { font-size: 17px; }
-  .mobile-email-cta span {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 5px;
+  .v4-cta--primary i { font-size: 17px; }
+  .v4-cta-label { font-size: 15px; }
+  .v4-cta-supports {
+    text-align: center;
+    font-size: 12.5px;
+    max-width: 320px;
   }
-  .mobile-email-cta small {
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    color: inherit;
-    opacity: 1;
-    text-transform: none;
-  }
-  .mobile-email-cta b { font-size: 15px; letter-spacing: 0.01em; }
   .v4-hero-video {
     width: 100%;
     aspect-ratio: 16 / 10;
