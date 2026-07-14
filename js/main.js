@@ -47,7 +47,6 @@
       ${a('faq.html', 'FAQ')}
       ${a('hot100.html', 'Hot 100')}
       ${a('blog.html', 'Blog')}
-      <li class="nav-menu-cta"><a href="${b}index.html" class="cta-pill">Get Pulse - Free</a></li>
     </ul>
     <div class="nav-right">
       <a href="${b}index.html" class="cta-pill">Get Pulse - Free</a>
