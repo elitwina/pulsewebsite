@@ -5291,6 +5291,7 @@ html.theme-green-early {
   gap: 14px;
 }
 .v4-cta--primary i { font-size: 22px; }
+.v4-cta-icon { width: 22px; height: 22px; flex-shrink: 0; }
 .v4-cta-label {
   font-size: 20px;
   font-weight: 700;
@@ -5449,6 +5450,7 @@ html.theme-green-early {
     gap: 10px;
   }
   .v4-cta--primary i { font-size: 17px; }
+  .v4-cta-icon { width: 17px; height: 17px; }
   .v4-cta-label { font-size: 15px; }
   .v4-cta-supports {
     text-align: center;
