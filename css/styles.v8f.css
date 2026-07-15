@@ -1278,7 +1278,7 @@ html.theme-green-early {
 /* Column header - matches row grid exactly; sticky so it stays visible while list scrolls */
 .h100-head {
   display: grid;
-  grid-template-columns: 44px 1fr 56px 64px;
+  grid-template-columns: 44px 1fr 50px 46px 56px 64px;
   gap: 18px;
   align-items: center;
   padding: 0 8px 10px;
@@ -1295,6 +1295,8 @@ html.theme-green-early {
   padding-top: 8px;
 }
 .h100-head-track { text-align: left; }
+.h100-head-bpm { text-align: right; }
+.h100-head-key { text-align: center; }
 .h100-head-change,
 .h100-head-plays { text-align: right; }
 
@@ -1304,13 +1306,48 @@ html.theme-green-early {
 }
 .h100-row {
   display: grid;
-  grid-template-columns: 44px 1fr 56px 64px;
+  grid-template-columns: 44px 1fr 50px 46px 56px 64px;
   gap: 18px;
   align-items: center;
   padding: 7px 8px;
   border-bottom: 1px solid rgba(245,243,236,0.04);
   transition: background 0.14s;
 }
+.h100-bpm {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--paper-dim);
+  text-align: right;
+  letter-spacing: 0.02em;
+}
+.h100-key {
+  justify-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #0a0a0a;
+  letter-spacing: 0.02em;
+}
+/* Camelot wheel colors - one per number, both A (minor) and B (major) share */
+.h100-key--1  { background: #7BE4B7; }
+.h100-key--2  { background: #63D8C3; }
+.h100-key--3  { background: #5FC3D5; }
+.h100-key--4  { background: #67A7DC; }
+.h100-key--5  { background: #7683DB; }
+.h100-key--6  { background: #8F6BD8; color: #fff; }
+.h100-key--7  { background: #A868CD; color: #fff; }
+.h100-key--8  { background: #C167C7; color: #fff; }
+.h100-key--9  { background: #D06BA1; color: #fff; }
+.h100-key--10 { background: #D97783; color: #fff; }
+.h100-key--11 { background: #DE8B5F; }
+.h100-key--12 { background: #E0AD4F; }
 .h100-row:hover { background: rgba(245,243,236,0.025); }
 .h100-row--empty {
   display: block;
@@ -1462,12 +1499,15 @@ html.theme-green-early {
 @media (max-width: 640px) {
   .h100-head,
   .h100-row {
-    grid-template-columns: 32px 1fr 56px;
+    grid-template-columns: 32px 1fr 42px 56px;
     gap: 10px;
     padding: 7px 4px;
   }
   .h100-head-change,
-  .h100-change { display: none; }
+  .h100-change,
+  .h100-head-bpm,
+  .h100-bpm { display: none; }
+  .h100-key { min-width: 36px; height: 20px; font-size: 10.5px; padding: 0 6px; }
   .h100-meta { flex-direction: column; align-items: flex-start; gap: 2px; }
   .h100-artist::before { display: none; }
 }

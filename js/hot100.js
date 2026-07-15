@@ -16,6 +16,22 @@
     { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]
   ));
 
+  // Placeholder BPM + Camelot Key generator (deterministic by track id, so
+  // the same song always shows the same value until the API returns real
+  // bpm/camelotKey fields). Remove once the API includes these.
+  const stableHash = (str) => {
+    let h = 0;
+    const s = String(str || '');
+    for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+    return Math.abs(h);
+  };
+  const placeholderBpm = (id) => 92 + (stableHash(id + 'b') % 46);   // 92-137
+  const placeholderKey = (id) => {
+    const n = 1 + (stableHash(id + 'k') % 12);
+    const ab = (stableHash(id + 'ab') % 2) ? 'A' : 'B';
+    return { num: n, label: n + ab };
+  };
+
   const renderChange = (change) => {
     if (!change || change === '+0' || change === '0') {
       return '<span class="pw-badge pw-badge--flat">=</span>';
@@ -76,17 +92,32 @@
   }
 
   function renderFull(containerEl, tracks) {
-    containerEl.innerHTML = tracks.map((t, i) => (
-      '<li class="h100-row">' +
-        '<span class="h100-rank">' + (i + 1) + '</span>' +
-        '<div class="h100-meta">' +
-          '<span class="h100-track">' + escapeHtml(t.track || '(untitled)') + '</span>' +
-          '<span class="h100-artist">' + escapeHtml(t.artist || '') + '</span>' +
-        '</div>' +
-        '<span class="h100-change">' + renderChange(t.change) + '</span>' +
-        '<span class="h100-count">' + escapeHtml(String(t.playedCount || '0')) + '</span>' +
-      '</li>'
-    )).join('');
+    containerEl.innerHTML = tracks.map((t, i) => {
+      const bpm = t.bpm != null ? t.bpm : placeholderBpm(t.id || t.track || i);
+      const keyStr = t.camelotKey || t.key;
+      let keyLabel, keyNum;
+      if (keyStr && /^\d{1,2}[AB]$/i.test(keyStr)) {
+        keyLabel = String(keyStr).toUpperCase();
+        keyNum = parseInt(keyLabel, 10);
+      } else {
+        const k = placeholderKey(t.id || t.track || i);
+        keyLabel = k.label;
+        keyNum = k.num;
+      }
+      return (
+        '<li class="h100-row">' +
+          '<span class="h100-rank">' + (i + 1) + '</span>' +
+          '<div class="h100-meta">' +
+            '<span class="h100-track">' + escapeHtml(t.track || '(untitled)') + '</span>' +
+            '<span class="h100-artist">' + escapeHtml(t.artist || '') + '</span>' +
+          '</div>' +
+          '<span class="h100-bpm">' + bpm + '</span>' +
+          '<span class="h100-key h100-key--' + keyNum + '">' + escapeHtml(keyLabel) + '</span>' +
+          '<span class="h100-change">' + renderChange(t.change) + '</span>' +
+          '<span class="h100-count">' + escapeHtml(String(t.playedCount || '0')) + '</span>' +
+        '</li>'
+      );
+    }).join('');
   }
 
   async function render(opts) {
