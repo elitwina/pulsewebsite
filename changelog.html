@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>What's new in Pulse - PulseDJ</title>
+<meta name="description" content="Every PulseDJ release, both platforms. See what changed in each version - features, fixes, and quality-of-life improvements." />
+<meta name="theme-color" content="#0b0a0c" />
+
+<meta property="og:title" content="What's new in Pulse - PulseDJ" />
+<meta property="og:description" content="Every release, both platforms. Pulse ships fast - here's what changed and when." />
+<meta property="og:type" content="article" />
+
+<link rel="icon" href="assets/img/logo-icon-red.svg" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="css/styles.v8f.css" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QGX764XNQN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-QGX764XNQN');
+</script>
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '594220423750495');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=594220423750495&ev=PageView&noscript=1" alt="" /></noscript>
+<script>
+(function(){
+  var t;
+  try { t = localStorage.getItem('pulse_color_theme'); } catch(e) {}
+  if (t === 'green') {
+    document.documentElement.classList.add('theme-green-early');
+  }
+})();
+</script>
+</head>
+<body class="theme-cinematic">
+
+<!-- SPLASH -->
+<div id="splash" class="splash" aria-hidden="true">
+  <div class="splash-stage">
+    <img src="assets/img/logo-icon-red.svg" alt="" class="splash-logo" />
+    <div class="splash-wordmark">PulseDJ</div>
+    <div class="splash-rule" aria-hidden="true"></div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar"></nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero" id="top">
+  <span class="page-eyebrow">PRODUCT</span>
+  <h1 class="page-title">What's new in Pulse</h1>
+  <p class="page-lede">Every release, both platforms. Pulse ships fast - here's what changed and when.</p>
+
+  <div class="changelog-tabs" role="tablist" aria-label="Platform">
+    <button class="cl-tab is-active" role="tab" aria-selected="true" data-platform="macos">
+      <i class="fab fa-apple" aria-hidden="true"></i> macOS
+    </button>
+    <button class="cl-tab" role="tab" aria-selected="false" data-platform="windows">
+      <i class="fab fa-windows" aria-hidden="true"></i> Windows
+    </button>
+  </div>
+</header>
+
+<!-- CHANGELOG TIMELINE -->
+<section class="changelog" aria-label="Version history">
+  <ol class="cl-timeline" id="cl-timeline">
+    <li class="cl-loading">
+      <span class="cl-spinner" aria-hidden="true"></span>
+      Loading changelog…
+    </li>
+  </ol>
+</section>
+
+<!-- CTA -->
+<aside class="page-cta">
+  <h3>Running an older version?</h3>
+  <p>Grab the latest build - installing over your current version keeps all your settings and history.</p>
+  <a href="index.html#download" class="cta-pill">Get Pulse - Free</a>
+</aside>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="./" class="brand">
+        <img src="assets/img/logo-icon-red.svg" alt="" class="brand-logo" />
+        <span class="brand-name">PulseDJ</span>
+      </a>
+      <p class="footer-tag">The DJ copilot.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="hot100.html">Hot 100</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="quick-guide.html">Quick guide</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="mailto:support@pulsedj.com">support@pulsedj.com</a></li>
+        <li><a href="https://facebook.com/groups/2051844701930444" target="_blank" rel="noopener">Facebook group</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="year"></span> PulseDJ</span>
+    <div class="footer-social">
+      <a href="https://facebook.com/groups/2051844701930444" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="blog.html" aria-label="Blog"><i class="fas fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js?v=20260714a"></script>
+<script>
+(function() {
+  const timelineEl = document.getElementById('cl-timeline');
+  const tabs = document.querySelectorAll('.cl-tab');
+  const escapeHtml = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => (
+    { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]
+  ));
+
+  function renderVersions(versions, platform) {
+    if (!versions || !versions.length) {
+      timelineEl.innerHTML = '<li class="cl-empty">Changelog for ' + escapeHtml(platform) + ' is coming soon.</li>';
+      return;
+    }
+    timelineEl.innerHTML = versions.map((v, i) => (
+      '<li class="cl-entry' + (i === 0 ? ' cl-entry--latest' : '') + '">' +
+        '<span class="cl-dot" aria-hidden="true"></span>' +
+        '<article class="cl-card">' +
+          '<header class="cl-card-head">' +
+            '<div class="cl-card-titles">' +
+              '<span class="cl-version">v' + escapeHtml(v.version) + '</span>' +
+              '<h2 class="cl-title">' + escapeHtml(v.title) + '</h2>' +
+            '</div>' +
+            '<div class="cl-card-meta">' +
+              (i === 0 ? '<span class="cl-latest-badge">LATEST</span>' : '') +
+              '<span class="cl-date">' + escapeHtml(v.date) + '</span>' +
+            '</div>' +
+          '</header>' +
+          '<ul class="cl-bullets">' +
+            v.bullets.map(b => '<li>' + escapeHtml(b) + '</li>').join('') +
+          '</ul>' +
+        '</article>' +
+      '</li>'
+    )).join('');
+  }
+
+  let state = { macos: null, windows: null, current: 'macos' };
+
+  async function load() {
+    try {
+      const r = await fetch('assets/data/changelog.json', { cache: 'no-store' });
+      const j = await r.json();
+      state.macos = j.versions || [];
+      // Windows changelog: same content for now (we scrape one source);
+      // once a separate feed exists this branch can pull from it.
+      state.windows = state.macos;
+      renderVersions(state[state.current], state.current);
+    } catch (e) {
+      timelineEl.innerHTML = '<li class="cl-empty">Couldn\'t load the changelog. Please refresh.</li>';
+    }
+  }
+
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => { x.classList.remove('is-active'); x.setAttribute('aria-selected', 'false'); });
+    t.classList.add('is-active');
+    t.setAttribute('aria-selected', 'true');
+    state.current = t.dataset.platform;
+    renderVersions(state[state.current], state.current);
+  }));
+
+  load();
+})();
+</script>
+</body>
+</html>

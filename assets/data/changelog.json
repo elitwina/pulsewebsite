@@ -1,0 +1,193 @@
+{
+  "source": "pulsedj.com/changelog",
+  "scrapedAt": "2026-07-22",
+  "platform": "macos",
+  "versions": [
+    {
+      "version": "3.5.5",
+      "title": "QOL & Bug Fixes",
+      "date": "July 2026",
+      "bullets": [
+        "Fixed a bug which caused the \"Similar\" filter to not apply properly to results",
+        "Upgrade to pro reminder will show at most once a day",
+        "Tracks that have been queued but not played now get filtered out of results for a small amount of time",
+        "Searched tracks are now counted as played tracks"
+      ]
+    },
+    {
+      "version": "3.5.4",
+      "title": "Pulse Launcher & Easy filters",
+      "date": "July 2026",
+      "bullets": [
+        "Added Pulse DJ Launcher, which automatically opens Pulse DJ when a supported DJ platform is launched",
+        "The main window now starts minimized when Pulse DJ launches",
+        "Revamped the recommendation filters",
+        "Added Greece to the available country list",
+        "Updated the tip lightbulb view UI",
+        "Added the ability to resize the minimized always-on-top icon",
+        "Added a “Reset to Defaults” option to the Features tab on the Profile page",
+        "Added automatic crash report uploads to help us identify and resolve issues",
+        "Added an Education Center with animated tips for dragging tracks, Curveball, the Local Files filter, and more",
+        "Removed the legacy algorithm selection system"
+      ]
+    },
+    {
+      "version": "3.5.3",
+      "title": "QOL & Bug fixes",
+      "date": "July 2026",
+      "bullets": [
+        "The Pulse Window now automatically opens on app launch",
+        "Fixed a bug that caused the PulseAI card not to be clickable for certain OS versions",
+        "Hot100 \"unread\" status is now updated properly"
+      ]
+    },
+    {
+      "version": "3.5.2",
+      "title": "Scroll Up for Hidden Gems",
+      "date": "July 2026",
+      "bullets": [
+        "Scroll up on the recommendations screen to explore deeper, less obvious results",
+        "Local remixes are now filtered to better match the current track",
+        "MyStyle now generates results for new remixes, even if they have never been played before",
+        "Searched tracks can now generate MyStyle results",
+        "Improved song detection accuracy",
+        "Refreshed the Profile page UI"
+      ]
+    },
+    {
+      "version": "3.5.1",
+      "title": "Smarter Recommendations & Tips",
+      "date": "July 2026",
+      "bullets": [
+        "Local remixes are now filtered to match current track better",
+        "Improved song recognition algorithm",
+        "Added rotating tips for experienced Pulse DJ users",
+        "Improved onboarding with clearer error messages",
+        "Redesigned the On Top window with a refreshed green header",
+        "Added visual feedback when copying a recommendation",
+        "Improved app stability"
+      ]
+    },
+    {
+      "version": "3.5.0",
+      "title": "Remix Revamp",
+      "date": "July 2026",
+      "bullets": [
+        "Remixes now show available versions from the DJ’s own library",
+        "Fixed a permission edge case that could trigger unnecessary system access requests",
+        "Removed UI jitter on hovering recommendations",
+        "Returned Hot 100 to the sidebar"
+      ]
+    },
+    {
+      "version": "3.4.0",
+      "title": "Premium Tier Added",
+      "date": "Jun 2026",
+      "bullets": [
+        "Added Premium tier to PulseDJ, unlocking premium features",
+        "Fixed the “Recent” algorithm bug which sometimes caused 0 results to be shown",
+        "Added proper support for musical key conversion between Camelot Wheel notation and music notes",
+        "Fixed clipping in the minimized view hover state",
+        "Improved error logging"
+      ]
+    },
+    {
+      "version": "3.3.7",
+      "title": "Smarter Recommendations When Detection Is Unclear",
+      "date": "Jun 2026",
+      "bullets": [
+        "Fixed an issue that could prevent the Pulse DJ database from downloading correctly",
+        "Improved recommendations when Pulse DJ is unsure which song is playing by using the previously played tracks as context"
+      ]
+    },
+    {
+      "version": "3.3.6",
+      "title": "Safer Updates & Better DJ Software Support",
+      "date": "Jun 2026",
+      "bullets": [
+        "Added disk space checks before database updates, with a warning icon if more space is needed",
+        "Improved recommendations with a new approximate matching method",
+        "VirtualDJ and Traktor now provide BPM and other track metadata for the currently playing track",
+        "Improved Traktor support so MyStyle results are matched more reliably",
+        "Fixed a local library bug that could prevent played tracks from updating correctly"
+      ]
+    },
+    {
+      "version": "3.3.5",
+      "title": "Classic Plus, Mixxx Support & DJ Library Fixes",
+      "date": "Jun 2026",
+      "bullets": [
+        "Added Classic Plus — a new recommendation algorithm for DJs who prefer a more familiar flow",
+        "Added a search bar to the country selection window",
+        "[BETA] Added Mixxx support, available as an opt-in setting",
+        "Improved djay Pro support song detection to use latest available version properly",
+        "Fixed BPM and key to show more reliably",
+        "Improved database update handling when a new Pulse DJ database needs to be downloaded",
+        "Upgraded the patch system to support more reliable database updates",
+        "Added Support Pulse DJ payments integration"
+      ]
+    },
+    {
+      "version": "3.3.3",
+      "title": "Stability Fix",
+      "date": "Jun 2026",
+      "bullets": [
+        "Fixed a crash that could happen when music recognition scanned corrupted audio files"
+      ]
+    },
+    {
+      "version": "3.3.0",
+      "title": "Better Library Discovery & Smarter Wild Picks",
+      "date": "Jun 2026",
+      "bullets": [
+        "Select your music folders manually for better local track discovery",
+        "Revamped local song discovery to make setup smoother and more reliable",
+        "Smarter \"by Style\" recommendations using a deeper music model",
+        "Improved stability with a fix for possible random music recognition crashes",
+        "Fixed ghost tooltips that could stay visible after hovering"
+      ]
+    },
+    {
+      "version": "3.1.3",
+      "title": "Full Language Support",
+      "date": "Mar 2026",
+      "bullets": [
+        "Full app translation — all texts now available in multiple languages",
+        "djay Pro now reads from its database for improved track detection",
+        "Visual indicator when a track can't be dragged to your DJ software",
+        "Additional small UI improvements"
+      ]
+    },
+    {
+      "version": "3.1.0",
+      "title": "Minimal Mode",
+      "date": "Feb 2026",
+      "bullets": [
+        "New minimal mode — a compact, unobtrusive overlay for your performance",
+        "Improved multi-language song title parsing for better matching",
+        "Opacity setting added to settings menu",
+        "BPM & Key now included in MyStyle processing"
+      ]
+    },
+    {
+      "version": "3.0.9",
+      "title": "Onboarding Wizard v2",
+      "date": "Jan 2026",
+      "bullets": [
+        "Redesigned step-by-step setup wizard for Serato, Rekordbox, Virtual DJ & Traktor",
+        "New \"Flassy\" recommendation algorithm added",
+        "Journey-aware A/B testing for smarter suggestions"
+      ]
+    },
+    {
+      "version": "3.0.0",
+      "title": "Drag Songs + Local DB",
+      "date": "Jan 2026",
+      "bullets": [
+        "Drag recommended tracks directly into your DJ software",
+        "Local song database — MyStyle and song mapping now processed on your machine",
+        "Filter to show only songs available locally on your computer"
+      ]
+    }
+  ]
+}
